@@ -7,7 +7,8 @@
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "prettier-watch": "onchange 'src/**/*.ts' -- prettier --config .prettierrc 'src/**/*.ts' --write {{changed}}"
   },
   "engines": {
     "node": "12"
