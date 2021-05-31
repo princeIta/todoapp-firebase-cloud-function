@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="checkbox.css">
+    <title>TodoApp Cloud Functions</title>
+</head>
+
+<body>
+    <div class="backdrop">
+        <div class="backdrop__upper backdrop__upper--color backdrop__upper--clip">
+
+        </div>
+        <div class="backdrop__lower backdrop__lower--color backdrop__lower--clip">
+
+        </div>
+    </div>
+
+    <main class="app app--small app--centralize app--glassmorphism">
+        <section class="login-cred">
+            <header class="login-cred__head app--glassmorphism">LOGIN</header>
+            <section class="login-cred__body">
+                <p>
+                    <button class="login-cred__login-btn app--glassmorphism" id="google-btn">Signin With Google</button>
+                </p>
+                <p>
+                    <button class="login-cred__login-btn app--glassmorphism" id="facebook-btn">Signin With
+                        Facebook</button>
+                </p>
+                <p>
+                    <button class="login-cred__login-btn app--glassmorphism" id="microsoft-btn">Signin With
+                        Microsoft</button>
+                </p>
+                <p>
+                    <button class="login-cred__login-btn app--glassmorphism" id="twitter-btn">Signin With
+                        Twitter</button>
+                </p>
+                <p>
+                    <button class="login-cred__login-btn app--glassmorphism" id="apple-btn">Signin With Apple</button>
+                </p>
+            </section>
+        </section>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="js/is-dom-elem.js"></script>
+    <script src="js/clear.js"></script>
+    <script src="js/html-to-elem.js"></script>
+    <script src="js/date.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

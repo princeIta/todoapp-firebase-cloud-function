@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="checkbox.css">
+    <title>TodoApp Cloud Functions</title>
+</head>
+
+<body>
+    <div class="backdrop">
+        <div class="backdrop__upper backdrop__upper--color backdrop__upper--clip">
+
+        </div>
+        <div class="backdrop__lower backdrop__lower--color backdrop__lower--clip">
+
+        </div>
+    </div>
+
+    <main class="app app--centralize">
+        <header class="header header--flex">
+            <section class="date-container">
+                <time class="
+                    date-container__day 
+                    date-container__day--color 
+                    date-container__day--large" id="date-container-js">
+                </time>
+                <data class="tasks-stat tasks-stat--align" id="tasks-stat-js">
+                </data>
+            </section>
+
+            <section style="margin-top:0.7em; margin-left: 5px">
+                <data class="month" id="month-js"></data>
+            </section>
+
+            <button class="button button--circular button--color button--position" id="add-button-js">
+                +
+            </button>
+        </header>
+
+        <article class="list-container">
+            <ul class="list-items" id="list-items-js">
+            </ul>
+        </article>
+
+        <article class="modal modal--hidden" id="add-item-modal">
+            <section class="modal__backdrop modal__backdrop--dark modal__backdrop--hidden">
+            </section>
+
+            <section class="modal__body modal__body--light modal__body--hidden">
+                <header class="modal__header">
+                    Add Task
+                </header>
+
+                <div class="modal__content">
+                    <p class="form-item">
+                        <label for="task-input">
+                            Task Description:
+                        </label>
+                        <input id="task-input" type="text" placeholder="Enter Task Description" />
+                    </p>
+
+                    <div>
+                        <p class="form-item">
+                            <label for="task-start">
+                                Start At:
+                            </label>
+                            <input id="task-start" type="datetime-local" placeholder="Select start time" />
+                        </p>
+                        <p class="form-item">
+                            <label for="task-end">
+                                End At
+                            </label>
+                            <input id="task-end" type="datetime-local" placeholder="Select End time" />
+                        </p>
+                    </div>
+                </div>
+                <footer class="modal__footer">
+                    <button class="modal__footer-okbtn">
+                        ok
+                    </button>
+                </footer>
+            </section>
+        </article>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="js/is-dom-elem.js"></script>
+    <script src="js/clear.js"></script>
+    <script src="js/html-to-elem.js"></script>
+    <script src="js/date.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="task.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: whitesmoke;
+    color: #82829c;
+}
+
+.backdrop {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.backdrop__upper {
+    height: 70%;
+    width: 100%;
+    position: absolute;
+}
+
+.backdrop__lower {
+    height: 65%;
+    width: 100%;
+    position: absolute;
+}
+
+.backdrop__upper--clip {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 50%);
+}
+
+.backdrop__lower--clip {
+    clip-path: polygon(0 0%, 100% 53%, 100% 100%, 0% 100%);
+}
+
+.backdrop__upper {
+    position: absolute;
+    top: 0;
+}
+
+.backdrop__lower {
+    position: absolute;
+    bottom: 0;
+}
+
+.backdrop__upper--color {
+    background: #5c5fe8;
+}
+
+.backdrop__lower--color {
+    background: #fb6667;
+}
+
+.app {
+    position: absolute;
+    min-width: 30em;
+    max-width: 35em;
+    width: 50%;
+    height: calc(100% - 5em);
+    border-radius: 0.7em;
+    padding: 0;
+    top: 0;
+    background-color: white;
+}
+
+.app--glassmorphism {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-top-right-radius: 0.7em;
+    border-top-left-radius: 0.7em;
+    border-top: 1px solid rgba(25, 255, 255, 0.2);
+    border-left: 1px solid rgba(25, 255, 255, 0.2);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.app--small {
+    height: 30em;
+}
+
+.app--centralize {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header {
+    height: 8.4em;
+    background: #fcfcff;
+    border-bottom: 0.122em solid #e0e9f1;
+    border-top-right-radius: 0.7em;
+    border-top-left-radius: 0.7em;
+    padding: 2em;
+    position: relative;
+}
+
+.header--flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-container {
+    display: flex;
+    text-transform: capitalize;
+}
+
+.date-container__day--color {
+    color: #666afb !important;
+}
+
+.date-container__day {
+    width: 75%
+}
+
+.date-container__day--large {
+    font-size: 2em;
+}
+
+.tasks-stat {
+    width: 30%;
+    font-size: 1.15em;
+    text-transform: capitalize;
+}
+
+.month {
+    font-size: 1.15em;
+    text-transform: capitalize;
+}
+
+.tasks-stat--align {
+    padding-top: 0.92em;
+    text-align: right;
+}
+
+.button {
+    width: 2.3em;
+    height: 2.3em;
+    font-size: 1.7em;
+    border: 0;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.button--circular {
+    border-radius: 50%;
+}
+
+.button--color {
+    background: #fb6b6c;
+    color: white;
+}
+
+.button--position {
+    position: absolute;
+    bottom: -1.15em;
+    right: 1em;
+}
+
+.list-container {
+    padding: 2em 0em;
+    height: calc(100% - 134px);
+    overflow: auto;
+}
+
+.list-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list-item-wrapper {
+    padding: 2em 0;
+    border-bottom: 1px solid #eef3f8;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 2em;
+    color: #82829c;
+}
+
+.list-item__checkbox {
+    flex-basis: 70%;
+}
+
+.list-item__interval {
+    flex-basis: 30%;
+    text-align: right;
+    font-size: 0.9em;
+}
+
+.list-item__text-wrapper {
+    position: relative;
+    padding: 0 0.2em;
+}
+
+.list-item__line-through {
+    position: absolute;
+    width: 100%;
+    border-bottom: 2px solid #d6d6e4;
+    top: 55%;
+}
+
+.list-item--done {
+    color: #a8a9ca
+}
+
+/* Modal */
+
+.modal {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    border-radius: 0.7em;
+    top: 0;
+}
+
+.modal__backdrop {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.7em;
+    cursor: pointer;
+}
+
+.modal__backdrop--dark {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal__body {
+    height: fit-content;
+    width: fit-content;
+    min-width: 400px;
+    max-width: calc(100% - 2em);
+    max-height: calc(100% - 3em);
+    min-height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    border-radius: 0.7em;
+}
+
+.modal__body--light {
+    background-color: whitesmoke;
+}
+
+.modal__header {
+    text-align: center;
+    padding: 0.8em;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #6e6e75;
+    border-bottom: 1px solid #e0e9f1;
+}
+
+.modal__content {
+    width: 100%;
+    overflow: auto;
+    height: 278px;
+    padding: 0 1em;
+}
+
+.modal__footer {
+    position: absolute;
+    bottom: 0;
+    height: 4em;
+    padding: 0.7em;
+    width: 100%;
+    border-top: 1px solid #e0e9f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__footer-okbtn {
+    border: none;
+    outline: none;
+    background-color: #5c60ea;
+    padding: 0.3em 3em;
+    font-size: 1.2em;
+    color: whitesmoke;
+    border-radius: 0.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal--hidden {
+    z-index: -5;
+    visibility: hidden;
+    overflow: hidden;
+    height: 0px;
+    width: 0px;
+}
+
+.modal__backdrop--hidden {
+    visibility: hidden;
+}
+
+.modal__body--hidden {
+    visibility: hidden;
+}
+
+.form-item {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 400px
+}
+
+.form-item>label {
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px 0px;
+}
+
+.form-item>* {
+    display: flex;
+    align-items: center;
+}
+
+.form-item>select {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+}
+
+.form-item>input {
+    height: 37px;
+    font-size: 16px;
+}
+
+/* Auth */
+
+.login-cred__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.login-cred__head {
+    text-align: center;
+    padding: 0.8em;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+
+.login-cred__login-btn {
+    border: none;
+    outline: none;
+    padding: 0.6em 3em;
+    font-size: 1.2em;
+    color: whitesmoke;
+    border-radius: 0.2em;
+    font-weight: bold;
+    cursor: pointer;
+    width: 400px;
+}
+
+.login-button-wrapper {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+}
